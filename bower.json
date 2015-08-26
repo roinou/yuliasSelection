@@ -1,0 +1,21 @@
+{
+  "name": "Yulia's Selection",
+  "version": "0.0.1",
+  "authors": [
+    "Rwanou <erwan.lacoste@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "bootstrap-stylus": "^3.3.5",
+      "angular": "~1.4.0",
+      "jquery": "^2.1.4"
+  }
+}
