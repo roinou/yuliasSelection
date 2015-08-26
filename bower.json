@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-      "bootstrap-stylus": "^3.3.5",
+      "bootstrap-stylus": "^4.0.5",
       "angular": "~1.4.0",
       "jquery": "^2.1.4"
   }
