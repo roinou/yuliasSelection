@@ -108,7 +108,18 @@ gulp.task('images', function () {
         .pipe(size());
 });
 
-gulp.task('build', ['appJS', 'libJS', 'appCSS', 'libCSS', 'fonts', 'images']);
+gulp.task('jade', function () {
+    gulp.src(folders.src.root + '/**/*.json')
+        .pipe(gulp.dest(folders.output.public.root));
+    return gulp.src([
+        folders.src.root + '/**/*.jade'
+    ])
+        .pipe(jade())
+        .pipe(gulp.dest(folders.output.public.root))
+        .pipe(size());
+});
+
+gulp.task('build', ['appJS', 'libJS', 'appCSS', 'libCSS', 'fonts', 'images', 'jade']);
 
 gulp.task('dist', ['build'], function() {
     // Views
@@ -147,6 +158,7 @@ gulp.task('watch', ['build'], function() {
     gulp.watch(['./public/styles/*.styl'], ['appCSS']);
     gulp.watch(['./public/styles/fonts/**/*'], ['fonts']);
     gulp.watch(['./public/images/**/*'], ['images']);
+    gulp.watch(['./public/**/*.jade'], ['jade']);
 });
 
 gulp.task('default', ['build']);

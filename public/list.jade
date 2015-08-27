@@ -1,0 +1,10 @@
+doctype html
+html(lang="en", ng-app='yuliaApp')
+    head
+        title="Yulia's Selection"
+    body(ng-controller='workCtrl')
+        .row(ng-repeat='work in works')
+            span {{work.composer}}
+
+        script(type='text/javascript', src='script/angular/angular.js')
+        script(type='text/javascript', src='script/app.js')

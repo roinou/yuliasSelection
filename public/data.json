@@ -1,0 +1,26 @@
+{
+  "title": "Yulia's Selection",
+  "lastUpdate": "2015-08-26",
+  "data": [
+    {
+      "composer": "Ludwig van Beethoven",
+      "artist": "Wilhelm Furtwängler",
+      "score": "5th Symphony",
+      "orchestra": "Berlin Philharmonic Orchestra",
+      "date": "1954-05-23",
+      "technical": {
+        "added": "2015-08-26"
+      }
+    },
+    {
+      "composer": "Ludwig van Beethoven",
+      "artist": "Wilhelm Furtwängler",
+      "score": "6th Symphony",
+      "orchestra": "Berlin Philharmonic Orchestra",
+      "date": "1954-05-23",
+      "technical": {
+        "added": "2015-08-26"
+      }
+    }
+  ]
+}
