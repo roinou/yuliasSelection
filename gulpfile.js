@@ -8,6 +8,7 @@ var filter    = require('gulp-filter');
 var flatten   = require('gulp-flatten');
 var uglify    = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
+var connect   = require('gulp-connect');
 var del       = require('del');
 var sourcemaps= require('gulp-sourcemaps');
 
@@ -159,10 +160,24 @@ gulp.task('watch', ['build'], function() {
     gulp.watch(['./public/styles/fonts/**/*'], ['fonts']);
     gulp.watch(['./public/images/**/*'], ['images']);
     gulp.watch(['./public/**/*.jade'], ['jade']);
+    gulp.watch([folders.output.public.root + '/**/*.html'], ['reloadHtml']);
+});
+
+gulp.task('reloadHtml', function() {
+    gulp.src(folders.output.public.root + '/**/*.html')
+        .pipe(connect.reload());
 });
 
 gulp.task('default', ['build']);
 
 gulp.task('clean', function() {
     del(folders.output.root);
+});
+
+gulp.task('serve', ['build'], function() {
+    connect.server({
+        root: 'build/public',
+        port: 8081,
+        livereload: true
+    });
 });
