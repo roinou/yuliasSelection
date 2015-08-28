@@ -12,19 +12,14 @@ html(lang="en", ng-app='yuliaApp')
             p.lead A subjective selection of Music's Masterpieces
 
             .table-responsive
-                table.table.table-bordered.table-striped
+                table.table.table-bordered.table-striped.table-hover
                     thead
                         tr
-                            th(ng-click="order('composer')")
-                                my-column-header(predicate="predicate", reverse="reverse", value="composer") Composer
-                            th(ng-click="order('artist')")
-                                my-column-header(predicate="predicate", reverse="reverse", value="artist") Artist
-                            th(ng-click="order('score')")
-                                    my-column-header(predicate="predicate", reverse="reverse", value="score") Score
-                            th(ng-click="order('orchestra')")
-                                my-column-header(predicate="predicate", reverse="reverse", value="orchestra") Orchestra
-                            th(ng-click="order('date')")
-                                my-column-header(predicate="predicate", reverse="reverse", value="date") Record Date
+                            th(ng-click="order('composer')", my-column-header, predicate="predicate", reverse="reverse", value="composer") Composer
+                            th(ng-click="order('artist')", my-column-header, predicate="predicate", reverse="reverse", value="artist") Artist
+                            th(ng-click="order('score')", my-column-header, predicate="predicate", reverse="reverse", value="score") Score
+                            th(ng-click="order('orchestra')", my-column-header, predicate="predicate", reverse="reverse", value="orchestra") Orchestra
+                            th(ng-click="order('date')", my-column-header, predicate="predicate", reverse="reverse", value="date") Recording Date
                     tbody
                         tr(ng-repeat='work in works | orderBy:predicate:reverse')
                             td {{ work.composer }}
