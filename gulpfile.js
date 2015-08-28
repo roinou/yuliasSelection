@@ -96,7 +96,7 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest(folders.output.public.root));
     return gulp.src([folders.src.styles + '/fonts/**/*',
         'bower_components/bootstrap-stylus/fonts/*'])
-        .pipe(filter('**/*.{eot,svg,ttf,woff}'))
+        .pipe(filter('**/*.{eot,svg,ttf,woff,woff2}'))
         .pipe(flatten())
         .pipe(gulp.dest(folders.output.public.fonts))
         .pipe(size());
@@ -159,7 +159,7 @@ gulp.task('watch', ['build'], function() {
     gulp.watch(['./public/styles/*.styl'], ['appCSS']);
     gulp.watch(['./public/styles/fonts/**/*'], ['fonts']);
     gulp.watch(['./public/images/**/*'], ['images']);
-    gulp.watch(['./public/**/*.jade'], ['jade']);
+    gulp.watch(['./public/**/*.jade', './public/**/*.json'], ['jade']);
     gulp.watch([folders.output.public.root + '/**/*.html'], ['reloadHtml']);
 });
 

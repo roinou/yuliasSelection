@@ -2,9 +2,36 @@ doctype html
 html(lang="en", ng-app='yuliaApp')
     head
         title="Yulia's Selection"
-    body(ng-controller='workCtrl')
-        .row(ng-repeat='work in works')
-            span {{work.composer}}
+        link(href="/styles/lib.css", rel="stylesheet")
+        link(href="/styles/app.css", rel="stylesheet")
+
+
+    body(ng-controller='WorkController')
+        .container-fluid
+            h1 Yulia's Selection
+            p.lead A subjective selection of Music's Masterpieces
+
+            .table-responsive
+                table.table.table-bordered.table-striped
+                    thead
+                        tr
+                            th(ng-click="order('composer')")
+                                my-column-header(predicate="predicate", reverse="reverse", value="composer") Composer
+                            th(ng-click="order('artist')")
+                                my-column-header(predicate="predicate", reverse="reverse", value="artist") Artist
+                            th(ng-click="order('score')")
+                                    my-column-header(predicate="predicate", reverse="reverse", value="score") Score
+                            th(ng-click="order('orchestra')")
+                                my-column-header(predicate="predicate", reverse="reverse", value="orchestra") Orchestra
+                            th(ng-click="order('date')")
+                                my-column-header(predicate="predicate", reverse="reverse", value="date") Record Date
+                    tbody
+                        tr(ng-repeat='work in works | orderBy:predicate:reverse')
+                            td {{ work.composer }}
+                            td {{ work.artist }}
+                            td {{ work.score }}
+                            td {{ work.orchestra }}
+                            td {{ work.date | date:"dd/MM/yyyy" }}
 
         script(type='text/javascript', src='script/angular/angular.js')
         script(type='text/javascript', src='script/app.js')
