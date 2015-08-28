@@ -2,8 +2,9 @@ doctype html
 html(lang="en", ng-app='yuliaApp')
     head
         title="Yulia's Selection"
-        link(href="/styles/lib.css", rel="stylesheet")
-        link(href="/styles/app.css", rel="stylesheet")
+        link(href="styles/lib.css", rel="stylesheet")
+        link(href="styles/bootstrap.css", rel="stylesheet")
+        link(href="styles/app.css", rel="stylesheet")
 
 
     body(ng-controller='WorkController')
@@ -12,21 +13,32 @@ html(lang="en", ng-app='yuliaApp')
             p.lead A subjective selection of Music's Masterpieces
 
             .table-responsive
-                table.table.table-bordered.table-striped.table-hover
+                table.table.table-bordered.table-hover
                     thead
                         tr
-                            th(ng-click="order('composer')", my-column-header, predicate="predicate", reverse="reverse", value="composer") Composer
-                            th(ng-click="order('artist')", my-column-header, predicate="predicate", reverse="reverse", value="artist") Artist
-                            th(ng-click="order('score')", my-column-header, predicate="predicate", reverse="reverse", value="score") Score
-                            th(ng-click="order('orchestra')", my-column-header, predicate="predicate", reverse="reverse", value="orchestra") Orchestra
-                            th(ng-click="order('date')", my-column-header, predicate="predicate", reverse="reverse", value="date") Recording Date
+                            th.sortable(ng-click="order('composer')", my-column-header, predicate="predicate",
+                                    reverse="reverse", value="composer") Composer
+                            th.sortable(ng-click="order('artist')", my-column-header, predicate="predicate",
+                                    reverse="reverse", value="artist") Artist
+                            th.sortable(ng-click="order('score')", my-column-header, predicate="predicate",
+                                    reverse="reverse", value="score") Score
+                            th.sortable(ng-click="order('orchestra')", my-column-header, predicate="predicate",
+                                    reverse="reverse", value="orchestra") Orchestra
+                            th.sortable(ng-click="order('date')", my-column-header, predicate="predicate",
+                                    reverse="reverse", value="date") Recording Date
                     tbody
-                        tr(ng-repeat='work in works | orderBy:predicate:reverse')
-                            td {{ work.composer }}
+                        tr(ng-repeat-start='work in works | orderBy:predicate:reverse', ng-click="select($id)")
+                            td {{ work.composer }} {{$id}}
                             td {{ work.artist }}
                             td {{ work.score }}
                             td {{ work.orchestra }}
                             td {{ work.date | date:"dd/MM/yyyy" }}
+                        tr(ng-repeat-end, ng-if="work.details", ng-show="selectedItem == $parent.$id")
+                            td(colspan=5)
+                                .list-group
+                                    a.list-group-item(ng-repeat="edition in work.details.editions",
+                                            href="{{ edition.link }}", target="_blank") {{ edition.editor }} {{ edition.code }}
+
 
         script(type='text/javascript', src='script/angular/angular.js')
         script(type='text/javascript', src='script/app.js')

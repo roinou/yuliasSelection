@@ -8,6 +8,12 @@
       "score": "5th Symphony",
       "orchestra": "Berlin Philharmonic Orchestra",
       "date": "1954-05-23",
+      "details": {
+        "editions": [
+          {"editor": "Tahra", "code": "Furt 1032/1033", "link": "http://tahra.com/catalogue.php?search_field=pavtpa.id_productsattribute=2&search_data=104&page=3"},
+          {"editor": "Audite", "code": "21.403", "link": "http://www.audite.de/en/product/13CD/21403-edition_wilhelm_furtwaengler_the_complete_rias_recordings.html"}
+        ]
+      },
       "technical": {
         "added": "2015-08-19"
       }
@@ -18,6 +24,12 @@
       "score": "6th Symphony",
       "orchestra": "Berlin Philharmonic Orchestra",
       "date": "1954-05-23",
+      "details": {
+        "editions": [
+          {"editor": "Tahra", "code": "Furt 1054/1057", "link": "http://tahra.com/catalogue.php?search_field=pavtpa.id_productsattribute=2&search_data=104&page=3"},
+          {"editor": "Audite", "code": "21.403", "link": "http://www.audite.de/en/product/13CD/21403-edition_wilhelm_furtwaengler_the_complete_rias_recordings.html"}
+        ]
+      },
       "technical": {
         "added": "2015-08-19"
       }

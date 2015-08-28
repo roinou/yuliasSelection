@@ -10,10 +10,18 @@ yuliaApp.controller('WorkController', ['$scope', '$http',
 
         $scope.predicate = 'technical.added';
         $scope.reverse = false;
+        $scope.selectedItem = null;
         $scope.order = function(predicate) {
             $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
             $scope.predicate = predicate;
         };
+
+        $scope.select = function (id) {
+            if (!id || $scope.selectedItem === id)
+                $scope.selectedItem = null;
+            else
+                $scope.selectedItem = id;
+        }
     }]
 );
 

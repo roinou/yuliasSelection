@@ -89,6 +89,12 @@ gulp.task('libCSS', function() {
     ])
         .pipe(concat('lib.css'))
         .pipe(gulp.dest(folders.output.public.styles));
+
+    gulp.src(folders.src.styles + '/bootstrap.styl')
+        .pipe(stylus())
+        .pipe(concat('bootstrap.css'))
+        .pipe(minifyCss())
+        .pipe(gulp.dest(folders.output.public.styles))
 });
 
 gulp.task('fonts', function () {
