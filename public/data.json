@@ -46,7 +46,22 @@
         ]
       },
       "technical": {
-        "added": "2015-09-19"
+        "added": "2015-08-19"
+      }
+    },
+    {
+      "composer": "Ludwig van Beethoven",
+      "artist": "Herbert von Karajan",
+      "score": "6th Symphony",
+      "orchestra": "Berlin Philharmonic Orchestra",
+      "date": "1975 - 1977",
+      "details": {
+        "editions": [
+          {"editor": "Deutsche Grammophon", "code": "CD ADD 0289 477 7578 2 GB 6", "link": "http://www.deutschegrammophon.com/fr/cat/4777578"}
+        ]
+      },
+      "technical": {
+        "added": "2015-08-29"
       }
     }
   ]
