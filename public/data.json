@@ -40,6 +40,11 @@
       "score": "5th Symphony",
       "orchestra": "Vienna Philharmonic Orchestra",
       "date": "1975-04-04",
+      "details": {
+        "editions": [
+          {"editor": "Deutsche Grammophon", "code": "0289 447 4002 8 CD ADD GOR", "link": "http://www.deutschegrammophon.com/fr/cat/4474002"}
+        ]
+      },
       "technical": {
         "added": "2015-09-19"
       }

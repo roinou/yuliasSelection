@@ -162,7 +162,7 @@ gulp.task('dist', ['build'], function() {
 gulp.task('watch', ['build'], function() {
     // watch files to build
     gulp.watch(['./public/script/*.js'], ['appJS']);
-    gulp.watch(['./public/styles/*.styl'], ['appCSS']);
+    gulp.watch(['./public/styles/*.styl'], ['appCSS', 'libCSS']);
     gulp.watch(['./public/styles/fonts/**/*'], ['fonts']);
     gulp.watch(['./public/images/**/*'], ['images']);
     gulp.watch(['./public/**/*.jade', './public/**/*.json'], ['jade']);
