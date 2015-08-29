@@ -27,7 +27,8 @@ html(lang="en", ng-app='yuliaApp')
                             th.sortable(ng-click="order('date')", my-column-header, predicate="predicate",
                                     reverse="reverse", value="date") Recording Date
                     tbody
-                        tr(ng-repeat-start='work in works | orderBy:predicate:reverse', ng-click="select($id)")
+                        tr(ng-repeat-start='work in works | orderBy:predicate:reverse', ng-click="select($id)",
+                                ng-class="{expandable: work.details}")
                             td {{ work.composer }}
                             td {{ work.artist }}
                             td {{ work.score }}
